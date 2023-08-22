@@ -54,3 +54,9 @@ controles.forEach(
     button.addEventListener("click", () => 
     MudaDirecao({ key: button.dataset.key }))
 );
+
+const iniciarJogo = () => {
+    if(fimDeJogo) return AtualizaGamerOver();
+
+    var html = `<div class="comida" style="grid-area" ${yDaComida} / ${xDaComida}></div>`;
+}
