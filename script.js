@@ -48,3 +48,9 @@ const MudaDirecao = e => {
 
     
 }
+// muda a direção com base na tecla pressionada
+controles.forEach(
+    button => 
+    button.addEventListener("click", () => 
+    MudaDirecao({ key: button.dataset.key }))
+);
