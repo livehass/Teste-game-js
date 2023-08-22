@@ -26,3 +26,25 @@ const AtualizaGamerOver = () => {
     alert("Fim de jogo, Pressione OK para jogar novamente");
     location.reload();
 }
+
+const MudaDirecao = e => {
+
+    if (e.key === "ArrowUp" && yDaVelocidade != 1) {
+        xDaVelocidade = 0;
+        yDaVelocidade = -1;
+    
+    }else if (e.key === "ArrowDown" && yDaVelocidade != -1){
+        xDaVelocidade = 0;
+        yDaVelocidade = 1;
+
+    }else if(e.key === "ArrowLeft" && xDaVelocidade != 1){
+        xDaVelocidade = -1;
+        yDaVelocidade = 0;
+
+    }else if (e.key === "ArrowLeft" && xDaVelocidade != -1) {
+        xDaVelocidade = 1;
+        yDaVelocidade = 0;
+    }
+
+    
+}
