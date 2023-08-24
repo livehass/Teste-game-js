@@ -57,4 +57,15 @@ const iniciaGame = () => {
         Elementopontuacao.innerText = `Pontuacao: ${pontuacao}`;
         ElementomaiorPontuacao.innerText = `Maior pontuacao: ${maiorPontuacao}`;
     }
+    xDacobra += xDaVelocidade;
+    yDaCobra += yDaVelocidade;
+
+    for(let i = corpoDaCobra.length -1; i > 0; i--) {
+        corpoDaCobra[i] = corpoDaCobra[i -1];
+    }
+    corpoDaCobra[0] = [xDacobra, yDaCobra];
+
+    for(let i = 0; i < corpoDaCobra.length; i++) {
+
+    }
 }
