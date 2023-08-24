@@ -1,9 +1,6 @@
 const areaDoJogo = document.querySelector(".area-do-jogo");
 const ElementomaiorPontuacao = document.querySelector(".maior-pontuacao");
 const Elementopontuacao = document.querySelector(".pontuacao");
-const controles = document.querySelectorAll(".constrols i");
-
-console.log(controles);
 
 var fimDeJogo = false;
 var xDaComida, yDaComida;
@@ -28,35 +25,36 @@ const AtualizaGamerOver = () => {
 }
 
 const MudaDirecao = e => {
-
-    if (e.key === "ArrowUp" && yDaVelocidade != 1) {
+    if (e.code === "KeyW" && yDaVelocidade != 1) {
         xDaVelocidade = 0;
         yDaVelocidade = -1;
     
-    }else if (e.key === "ArrowDown" && yDaVelocidade != -1){
+    }else if (e.code === "KeyS" && yDaVelocidade != -1){
         xDaVelocidade = 0;
         yDaVelocidade = 1;
 
-    }else if(e.key === "ArrowLeft" && xDaVelocidade != 1){
+    }else if(e.code === "KeyA" && xDaVelocidade != 1){
         xDaVelocidade = -1;
         yDaVelocidade = 0;
 
-    }else if (e.key === "ArrowLeft" && xDaVelocidade != -1) {
+    }else if (e.code === "KeyD" && xDaVelocidade != -1) {
         xDaVelocidade = 1;
         yDaVelocidade = 0;
     }
-
-    
 }
-// muda a direção com base na tecla pressionada
-controles.forEach(
-    button => 
-    button.addEventListener("click", () => 
-    MudaDirecao({ key: button.dataset.key }))
-);
 
-const iniciarJogo = () => {
+const iniciaGame = () => {
     if(fimDeJogo) return AtualizaGamerOver();
+    let html = `<div class="comida" style="grid-area: ${yDaComida} / ${xDaComida}"></div>`;
+    
+    if(xDacobra === xDaComida && yDaCobra === yDaComida) {
+        atualizaPosicaoDaComida();
+        corpoDaCobra.push(yDaComida, xDaComida);
+        pontuacao++;
+        maiorPontuacao = pontuacao >= maiorPontuacao ? pontuacao : maiorPontuacao;
 
-    var html = `<div class="comida" style="grid-area" ${yDaComida} / ${xDaComida}></div>`;
+        localStorage.setItem("maior-pontuacao", maiorPontuacao);
+        Elementopontuacao.innerText = `Pontuacao: ${pontuacao}`;
+        ElementomaiorPontuacao.innerText = `Maior pontuacao: ${maiorPontuacao}`;
+    }
 }
