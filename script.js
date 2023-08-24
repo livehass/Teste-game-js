@@ -66,6 +66,14 @@ const iniciaGame = () => {
     corpoDaCobra[0] = [xDacobra, yDaCobra];
 
     for(let i = 0; i < corpoDaCobra.length; i++) {
+        html += `<div class="cabeca" style="grid-area: ${corpoDaCobra[i][1]} / ${corpoDaCobra[i][0]}"></div>`;
 
+        if(i !== 0 && corpoDaCobra[0][1] === corpoDaCobra[i][1] && corpoDaCobra[0][0] === corpoDaCobra[i][0]) {
+            fimDeJogo = true;
+        }
     }
+    areaDoJogo.innerHTML = html;
 }
+atualizaPosicaoDaComida();
+tempoDeEspera = setInterval(iniciaGame, 100);
+document.addEventListener("keyup", MudaDirecao);

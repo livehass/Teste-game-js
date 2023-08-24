@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap');
 
 :root {
-    --cor-padrao-destaque: rgb(3, 22, 85);
+    --cor-padrao-destaque: rgb(45, 248, 4);
 }
 *{
     margin: 0;
@@ -25,13 +25,13 @@ body{
     overflow: hidden;
     flex-direction: column;
     justify-content: center;
-    background: #ecedee;
+    background: #f8f4f4;
     border-radius: 5px;
     box-shadow: 0 20px 40px rgba(52, 87, 220, 0.2);
 }
 
 .detalhes-do-game{
-    color: var(--cor-padrao-destaque);
+    color: #111111;;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 1.2rem;
@@ -50,7 +50,7 @@ body{
 }
 
 .area-do-jogo .comida{
-    background: #ff003d;
+    background: #f70303;
 }
 
 .area-do-jogo .cabeca{
@@ -64,7 +64,7 @@ body{
 .controles p{
     padding: 10px 0;
     font-size: 1.3rem;
-    color: var(--cor-padrao-destaque);
+    color: #111111;
     text-transform: uppercase;
 
 }
@@ -76,10 +76,6 @@ body{
     padding: 10px 4px;
     box-shadow: 0 20px 40px rgba(52, 87, 220, 0.2);
     color: rgb(10, 10, 10);
-}
-.controles a:hover {
- color: aliceblue;
- cursor: pointer;
 }
 @media screen and (max-width: 800px) {
     .detalhes-do-game{
