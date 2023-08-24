@@ -49,7 +49,7 @@ const iniciaGame = () => {
     
     if(xDacobra === xDaComida && yDaCobra === yDaComida) {
         atualizaPosicaoDaComida();
-        corpoDaCobra.push(yDaComida, xDaComida);
+        corpoDaCobra.push([yDaComida, xDaComida]);
         pontuacao++;
         maiorPontuacao = pontuacao >= maiorPontuacao ? pontuacao : maiorPontuacao;
 
@@ -60,7 +60,7 @@ const iniciaGame = () => {
     xDacobra += xDaVelocidade;
     yDaCobra += yDaVelocidade;
 
-    for(let i = corpoDaCobra.length -1; i > 0; i--) {
+    for(let i = corpoDaCobra.length - 1; i > 0; i--) {
         corpoDaCobra[i] = corpoDaCobra[i -1];
     }
     corpoDaCobra[0] = [xDacobra, yDaCobra];
